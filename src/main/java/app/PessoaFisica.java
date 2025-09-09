@@ -4,7 +4,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 import java.time.Month;
 
-public class PessoaFisica {
+public class PessoaFisica extends Pessoa {
     private String nome;
     private String endereco;
     private LocalDate dataCriacao;
@@ -17,30 +17,6 @@ public class PessoaFisica {
         this.setDataCriacao(LocalDate.now());
         this.setDataNascmineto(dataNascimento);
         this.setCpf(cpf);
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public LocalDate getDataCriacao() {
-        return dataCriacao;
-    }
-
-    public void setDataCriacao(LocalDate dataCriacao) {
-        this.dataCriacao = dataCriacao;
     }
 
     public LocalDate getDataNascimento() {
@@ -59,6 +35,7 @@ public class PessoaFisica {
         this.cpf = cpf;
     }
 
+    @Override
     public String exibirInformacoes() {
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return this.getNome() + "," + this.getEndereco() + "," + this.getDataCriacao() + "," + this.getDataNascimento() + "," + this.getCpf();
